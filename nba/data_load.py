@@ -6,7 +6,7 @@ def load_csv(data_path: Path) -> pd.DataFrame:
 
 if __name__ == "__main__":
     # Define the base directory dynamically (assumes the CSV is within the current script's directory)
-    base_dir = Path(__file__).parent
+    base_dir = Path(__file__).parent.parent
     data_path = base_dir / "data" / "game.csv"
 
     # Load and print the DataFrame
