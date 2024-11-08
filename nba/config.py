@@ -1,6 +1,6 @@
 import yaml
 from pydantic import ValidationError
-from dataclasses import Config
+from data_classes import Config
 
 def load_config(file_path: str = "config.yaml") -> Config:
     """Load and parse the configuration from a YAML file."""
