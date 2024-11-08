@@ -1,13 +1,14 @@
 import pandas as pd
 from pathlib import Path
+import config
 
 def load_csv(data_path: Path) -> pd.DataFrame:
-    return pd.read_csv(data_path)
+    return pd.read_csv(data_path) 
 
 if __name__ == "__main__":
-    # Define the base directory dynamically (assumes the CSV is within the current script's directory)
-    base_dir = Path(__file__).parent.parent
-    data_path = base_dir / "data" / "game.csv"
+    # Load the configuration
+    config = config.load_config()
+    data_path = Path(__file__).parent.parent / config.data.data_path
 
     # Load and print the DataFrame
     df = load_csv(data_path)
