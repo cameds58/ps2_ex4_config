@@ -1,5 +1,6 @@
 import pandas as pd
 from pathlib import Path
+import config
 
 def load_csv(data_path: Path) -> pd.DataFrame:
     """
@@ -14,9 +15,9 @@ def load_csv(data_path: Path) -> pd.DataFrame:
     return pd.read_csv(data_path)
 
 if __name__ == "__main__":
-    # Define the base directory dynamically (assuming script is inside 'nba' folder)
-    base_dir = Path(__file__).resolve().parent.parent  # Go up one level from the 'nba' folder
-    data_path = base_dir / "data" / "game.csv"  # Point to the 'data/game.csv'
+    # Load the configuration
+    config = config.load_config()
+    data_path = Path(__file__).parent.parent / config.data.data_path
     # Load and print the DataFrame
     df = load_csv(data_path)
     print(df)

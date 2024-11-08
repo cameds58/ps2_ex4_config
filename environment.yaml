@@ -3,7 +3,8 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - pydantic=1.10.62
+  - pydantic=1.10.2
+  - python=3.10
   - pandas
   - pyyaml
   - pre-commit
