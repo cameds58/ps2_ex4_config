@@ -24,4 +24,3 @@ def load_config(file_path: str = "config.yaml") -> Config:
         logging.error("Configuration validation error:", e)
     
     return config
-
